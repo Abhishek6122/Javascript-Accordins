@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Accordin</title>
+</head>
+<style>
+    main {
+        width: 90%;
+        margin: auto;
+        margin-top: 100px;
+        font-size: 35px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    main .heading {
+        background: #badc58;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    main .content {
+        background: #FFC312;
+        padding: 0 20px;
+        height: 0;
+        overflow: hidden;
+        transition: .3s;
+    }
+
+    main .content::-webkit-scrollbar {
+        display: none;
+    }
+
+    main .cont_2 {
+        padding: 10px 20px;
+        height: 170px;
+        overflow: auto;
+        transition: .3s;
+    }
+    main ion-icon{
+        position: absolute;
+        right: 10px;
+        font-size: 50px;
+        transform: rotate(-90deg);
+        transition: .3s;
+    }
+    main .icon_2{
+        transform: rotate(0);
+        transition: .3s;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="heading">What is HTML<ion-icon name="chevron-down-outline"></ion-icon></div>
+        <div class="content">The HyperText Markup Language or HTML is the standard markup language for documents
+            designed to be displayed in a web browser. It is often assisted by technologies such as Cascading Style
+            Sheets and scripting languages such as JavaScript.</div>
+        <div class="heading">What is CSS<ion-icon name="chevron-down-outline"></ion-icon></div>
+        <div class="content">Cascading Style Sheets is a style sheet language used for describing the presentation of a
+            document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide
+            Web, alongside HTML and JavaScript.</div>
+        <div class="heading">What is Javascript<ion-icon name="chevron-down-outline"></ion-icon></div>
+        <div class="content">JavaScript, often abbreviated as JS, is a programming language that is one of the core
+            technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on
+            the client side for webpage behavior, often incorporating third-party libraries.</div>
+    </main>
+    <script>
+        let headings = document.querySelectorAll("main .heading");
+        let content = document.querySelectorAll("main .content");
+        let icons = document.querySelectorAll("main ion-icon");
+
+        for (let i = 0; i < headings.length; i++) {
+            headings[i].addEventListener('click', () => {
+                for (let i = 0; i < content.length; i++) { }
+                for (let i = 0; i < icons.length; i++) { }
+                content[i].classList.toggle("cont_2");
+                icons[i].classList.toggle("icon_2");
+            })
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
